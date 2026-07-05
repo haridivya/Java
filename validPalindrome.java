@@ -7,6 +7,7 @@ public class validPalindrome {
         s=s.toLowerCase();
         int left=0;
         int right=s.length()-1;
+        boolean c=true;
         while(left<right){
             char f=s.charAt(left);
             char l=s.charAt(right);
@@ -14,7 +15,9 @@ public class validPalindrome {
             int l1=l;
             if((f1>=65 && f1<=122) && (l1>=65 && l1<=122)){
                 if(f!=l){
+                    c=false;
                     System.out.println("Not Palindrome");
+                    break;
                 }
                 left++;
                 right--;
@@ -28,7 +31,8 @@ public class validPalindrome {
                 }
             }
         }
-        System.out.println("Palindrome");
-
+        if(c==true){
+            System.out.println("Palindrome");
+        }
     }
 }
