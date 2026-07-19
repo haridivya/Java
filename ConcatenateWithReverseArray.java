@@ -1,0 +1,20 @@
+// You are given an integer array nums of length n.
+// Construct a new array ans of length 2 * n such that the first n elements are the same as nums, 
+// and the next n elements are the elements of nums in reverse order.
+// Formally, for 0 <= i <= n - 1:
+// ans[i] = nums[i]
+// ans[i + n] = nums[n - i - 1]
+// Return an integer array ans.
+class Solution {
+    public int[] concatWithReverse(int[] nums) {
+        int[] res=new int[nums.length*2];
+        for(int i=0;i<nums.length;i++)
+        {
+            res[i]=nums[i];
+        }
+        for(int j=nums.length;j<res.length;j++){
+            res[j]=nums[res.length-j-1];
+        }
+        return res;
+    }
+}
